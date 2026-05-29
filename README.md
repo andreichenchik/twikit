@@ -33,6 +33,21 @@ You can use functions such as posting or searching for tweets without an API key
 
 
 
+### Browser TLS impersonation (optional)
+
+Some X endpoints reject the default `httpx` TLS fingerprint with a `403`
+(HTML) response even when the request is valid. Installing the optional
+`curl_cffi` backend and passing `impersonate=` routes requests through a
+browser TLS fingerprint, which avoids those 403s:
+
+```
+pip install "twikit[impersonate] @ git+https://github.com/PawiX25/twikit.git"
+```
+
+```python
+client = Client('en-US', impersonate='chrome124')
+```
+
 
 ## Features
 
