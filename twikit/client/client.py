@@ -138,11 +138,15 @@ class Client:
         cookies = dict(self.http.cookies)
         params = kwargs.get('params')
         data = kwargs.get('data')
+        json_data = kwargs.get('json')
+        files = kwargs.get('files')
         r = await self._curl_session.request(
             method, url,
             headers=kwargs.get('headers'),
             params=params,
             data=data,
+            json=json_data,
+            files=files,
             cookies=cookies,
         )
         for k, v in r.cookies.items():
