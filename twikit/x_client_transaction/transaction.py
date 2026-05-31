@@ -14,7 +14,7 @@ from .utils import float_to_hex, is_odd, base64_encode, handle_x_migration
 
 ON_DEMAND_FILE_REGEX = re.compile(
     r',(\d+):["\']ondemand\.s["\']', flags=(re.VERBOSE | re.MULTILINE))
-ON_DEMAND_HASH_PATTERN = r',{}:"([0-9a-f]+)"'
+ON_DEMAND_HASH_PATTERN = r',{}:["\']([0-9a-fA-F]+)["\']'
 INDICES_REGEX = re.compile(r'\[(\d+)\],\s*16')
 
 
